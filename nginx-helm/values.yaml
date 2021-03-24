@@ -1,0 +1,15 @@
+service:
+   name: nginx-svc
+   type: NodePort
+   app: nginx
+   port: 8000
+   targetPort: 80
+   protocol: tcp 
+
+nginx:
+  name: nginx-deploy
+  label: nginx
+  label: v1
+  replicas: 1
+  image: docker.io/bharamicrosystems/nginx:v1
+  containerPort: 80 
