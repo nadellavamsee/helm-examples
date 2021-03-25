@@ -1,0 +1,16 @@
+service:
+  name: blog
+  app: blog
+  type: NodePort
+  protocol: tcp
+  port: 80
+  targetPort: 2368
+  nodePort: 30080
+
+blog:
+  name: blog
+  app: blog
+  replicas: 1
+  image: ghost:2.6-alpine
+  imagePullPolicy: Always
+  containerPort: 2368
